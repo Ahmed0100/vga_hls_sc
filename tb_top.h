@@ -1,5 +1,6 @@
 #ifndef TB_TOP_H
 #define TB_TOP_H
+#include <systemc.h>
 SC_MODULE(tb_top)
 {
 	sc_in<bool> sys_clk;
@@ -13,7 +14,7 @@ SC_MODULE(tb_top)
 	sc_in<sc_uint<8> > blue;
 	//file pointers
 	FILE* h_sync_out_file, *v_sync_out_file, *n_blank_out_file,
-	*n_sync_out_file, *red_out_file, *green_out_file, *green_out_file;
+	*n_sync_out_file, *red_out_file, *green_out_file, *blue_out_file;
 	FILE* diff_red_file,*diff_green_file, *diff_blue_file;
 	FILE* red_golden_file, *green_golden_file, *blue_golden_file;
 	void recv();

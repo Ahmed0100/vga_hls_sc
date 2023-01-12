@@ -1,4 +1,5 @@
 #include "tb_top.h"
+#include "define.h"
 void tb_top::recv()
 {
 	unsigned int n=0;
@@ -87,7 +88,7 @@ void tb_top::compare_results()
 	   while(fscanf(red_golden_file,"%d",&red_golden)!=EOF)
 	   {
 		   fscanf(red_out_file,"%d",&red_out);
-		   cout << endl <<"cycle["<< line_red << "]: " << red_golden << " -- "<< red_red;
+		   cout << endl <<"cycle["<< line_red << "]: " << red_golden << " -- "<< red_out<<endl;
 
 		   if(red_out != red_golden)
 		   {
@@ -129,7 +130,7 @@ void tb_top::compare_results()
 	   while(fscanf(blue_golden_file,"%d",&blue_golden)!=EOF)
 	   {
 		   fscanf(blue_out_file,"%d",&blue_out);
-		   cout << endl <<"cycle["<< line_blue << "]: " << blue_golden << " -- "<< blue_blue;
+		   cout << endl <<"cycle["<< line_blue << "]: " << blue_golden << " -- "<< blue_out<<endl;
 
 		   if(blue_out != blue_golden)
 		   {
@@ -171,7 +172,7 @@ void tb_top::compare_results()
 	   while(fscanf(green_golden_file,"%d",&green_golden)!=EOF)
 	   {
 		   fscanf(green_out_file,"%d",&green_out);
-		   cout << endl <<"cycle["<< line_green << "]: " << green_golden << " -- "<< green_green;
+		   cout << endl <<"cycle["<< line_green << "]: " << green_golden << " -- "<< green_out<<endl;
 
 		   if(green_out != green_golden)
 		   {

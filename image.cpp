@@ -3,7 +3,7 @@
 void image::image_main(void)
 {
 	const int pixels_y=5;
-	const int pixels_x = 5;
+	const int pixels_x=5;
 	wait();
 	while(1)
 	{

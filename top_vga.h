@@ -1,6 +1,6 @@
-#ifdef TOP_H
+#ifndef TOP_H
 #define TOP_H
-#include <system.h>
+#include <systemc.h>
 #include "vga.h"
 #include "image.h"
 SC_MODULE(top_vga)
@@ -18,8 +18,8 @@ SC_MODULE(top_vga)
 	vga vga_inst;
 	image image_inst;
 	sc_signal<bool> disp_en;
-	sc_signal<bool> row;
-	sc_signal<bool> col;
+	sc_signal<int> row;
+	sc_signal<int> col;
 
 	SC_CTOR(top_vga): vga_inst("vga_inst"),image_inst("image_inst"){
 		vga_inst.sys_clk(sys_clk);
@@ -34,13 +34,13 @@ SC_MODULE(top_vga)
 
 		image_inst.sys_clk(sys_clk);
 		image_inst.reset_n(reset_n);
-		image_inst.h_sync(h_sync);
-		image_inst.v_sync(v_sync);
 		image_inst.disp_en(disp_en);
 		image_inst.col(col);
 		image_inst.row(row);
-		image_inst.n_blank(n_blank);
-		image_inst.n_sync(n_sync);
+		image_inst.red(red);
+		image_inst.green(green);
+		image_inst.blue(blue);
+
 	};
 };
 #endif

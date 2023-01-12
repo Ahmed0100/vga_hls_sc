@@ -1,4 +1,4 @@
-#ifdef IMAGE_H
+#ifndef IMAGE_H
 #define IMAGE_H
 #include <systemc.h>
 
@@ -8,6 +8,7 @@ SC_MODULE(image)
 	sc_in<bool> reset_n;
 	sc_in<int> col;
 	sc_in<int> row;
+	sc_in<bool> disp_en;
 	sc_out<sc_uint<8> > red;
 	sc_out<sc_uint<8> > green;
 	sc_out<sc_uint<8> > blue;
